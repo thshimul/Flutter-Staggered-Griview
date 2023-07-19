@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controller/controller.dart';
+import '../route/route.dart';
 class TaskOne extends StatelessWidget {
   TaskOne( {super.key});
 
@@ -18,7 +19,7 @@ class TaskOne extends StatelessWidget {
     return Obx(
           ()=>WillPopScope(
         onWillPop: () {
-          Get.back();
+          Get.offAndToNamed(RouteManager.home);
           return Future.value(true);
         },
         child: SafeArea(

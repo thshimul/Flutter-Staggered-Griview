@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../controller/controller.dart';
+import '../route/route.dart';
 class TaskTwo extends StatelessWidget {
    TaskTwo( {super.key});
    TaskController controller=Get.put(TaskController());
@@ -16,7 +17,7 @@ class TaskTwo extends StatelessWidget {
     return  Obx(
         ()=> WillPopScope(
             onWillPop: () {
-              Get.back();
+              Get.offAndToNamed(RouteManager.home);
               return Future.value(true);
             },
             child: SafeArea(
